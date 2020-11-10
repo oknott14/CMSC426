@@ -31,7 +31,7 @@ for t = 1:length(LocalWindows)
     bbColors = window(xb(:), yb(:), 3);
     rgbbColors = [rbColors; gbColors; bbColors];
     
-    %find p(X|Cl)
+    %find p(x|Cl)
     fmu = mean(rgbfColors)
     fsigma = cov(rgbfColors)
     fX = window(xf(:),yf(:),:)
@@ -40,25 +40,9 @@ for t = 1:length(LocalWindows)
     bmu = mean(rgbbColors)
     bsigma = cov(rgbbColors)
     bX = window(xb(:),yb(:),:)
-    bpdf = mvnpdf(bX,bmu,bsigma)
-    
-    gmmDist = fitgmdist([fpdf;bpdf],2)
-    
-    localConfidence = zeros(size(window))
-    
-    for i = 1:WindowWidth
-        for j = 1:WindowWidth
-            
-            pxCl = pdf(gmmDist, window(i,j,:)
-            localConfidence(i,j) = pxCl * pCl
-            
-        end
-    end
-    
-    colorModelConfidences{t} = localConfidence;
+    bpdf = mvnpdf(bX,bmu,
     
     
-end
     
     
     

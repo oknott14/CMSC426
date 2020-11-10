@@ -6,9 +6,9 @@
 
 % Some parameters you need to tune:
 WindowWidth = 50;  
-ProbMaskThreshold = 10;%needs to be changed probably 
+ProbMaskThreshold = 10;%needs to be chan 
 NumWindows= 50; 
-BoundaryWidth = 5;
+BoundaryWidth = 10;
 
 % Load images:
 fpath = '../input';
